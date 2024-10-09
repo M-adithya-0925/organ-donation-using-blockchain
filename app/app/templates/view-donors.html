@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../static/styles.css" rel="stylesheet">
+    <link href="../static/bootstrap.css" rel="stylesheet">
+    <link href="../static/fontawesome-all.css" rel="stylesheet">
+    <link rel="icon" href="../static/organ-donation-logo-new.svg">
+    <title>Donors Database</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <a href="../templates/index.html">
+                            <img class="nav-logo" src="../static/organ-donation-platform-logo-1.svg" alt="Organ Donation Platform">
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>            
+        <div class="container">
+            <div class="row center-box">
+                <div class="col-md-12">
+                    <h3>Details of Registered Donors</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Blood Type</th>
+                                    <th>Organ Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for donor in donors %}
+                                <tr>
+                                    <td>{{ donor.id }}</td>
+                                    <td>{{ donor.name }}</td>
+                                    <td>{{ donor.email }}</td>
+                                    <td>{{ donor.phone }}</td>
+                                    <td>{{ donor.blood_type }}</td>
+                                    <td>{{ donor.organ_type }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../main.js"></script>
+</body>
+</html>
